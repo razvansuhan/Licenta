@@ -1,0 +1,48 @@
+{{#if removedUser}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  Angajatul a fost șters!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+    <div class="col 6"><h1>Angajați</h1></div>
+    <div class="col 6 d-flex justify-content-end">
+        <a href="/adduser" type="button" class="btn btn-primary align-self-center">+Adaugă angajat</a>
+    </div>
+</div>
+
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" class="text-center">#</th>
+            <th scope="col" class="text-center">Nume</th>
+            <th scope="col" class="text-center">Prenume</th>
+            <th scope="col" class="text-center">Adresa</th>
+            <th scope="col" class="text-center">Email</th>
+            <th scope="col" class="text-center">Telefon</th>
+            <th scope="col" class="text-center">Data nasterii</th>
+            <th scope="col" class="text-center">Acțiune</th>
+        </tr>
+    </thead>
+    <tbody>
+<p>{{this.ID_Angajat}}</p>
+        {{#each rows}}
+        <tr>
+            <th scope:"row" class="text-center">{{this.ID_Angajat}}</th> 
+            <td class="text-center">{{this.Nume}}</td>
+            <td class="text-center">{{this.Prenume}}</td>
+            <td class="text-center">{{this.Adresa}}</td>
+            <td class="text-center">{{this.Mail}}</td>
+            <td class="text-center">{{this.Telefon}}</td>
+             <td class="text-center">{{this.Data_nasterii}}</td>
+            <td class="text-center">
+                <a href="/viewuser/{{this.ID_Angajat}}" type="button" cLass="btn btn-light btn-small"><i class="bi bi-eye"></i> Vezi detalii</a>
+                <a href="/edituser/{{this.ID_Angajat}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Editează</a>
+                <a href="/{{this.ID_Angajat}}" type="button" class="btn btn-light btn-small" ><i class="bi bi-person-x"></i> Șterge</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

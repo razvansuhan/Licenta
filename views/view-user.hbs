@@ -1,0 +1,45 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Detalii angajat</li>
+    </ol>
+</nav>
+<div class="view-user p-5">
+    {{#each rows}}
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h3>{{this.Nume}} {{this.Prenume}}</h3>
+        </div>
+    </div>
+
+
+<div class="row">
+   <div class="col">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="co1">Nume</th>
+          <th scope="col">Prenume</th>
+          <th scope= "co1">Adresa</th>
+          <th scope="co1">Mail</th>
+          <th scope="co1">Telefon</th>
+          <th scope="co1">Data nasterii</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{this.Nume}}</th>
+          <td>{{this.Prenume}}</td>
+          <td>{{this.Adresa}}</td>
+          <td>{{this.Mail}}</td>
+          <td>{{this.Telefon}}</td>
+          <td>{{this.Data_nasterii}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+    {{/each}}
+</div>
